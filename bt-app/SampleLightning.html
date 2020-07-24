@@ -145,6 +145,7 @@
         };
 
         function screenPop(parameter) {
+			var telefono = document.getElementById("telefono_chiamante").value;
             sforce.opencti.screenPop({
                 type: sforce.opencti.SCREENPOP_TYPE.FLOW,
                 params: {
@@ -164,7 +165,7 @@
                     }, {
                         'name': 'NC',
                         'type': 'String',
-                        'value': '3288680816'
+                        'value': telefono
                     }, {
                         'name': 'AgentId',
                         'type': 'String',
@@ -211,21 +212,26 @@
 </head>
 
 <body>
-	<!--button onclick="getAppViewInfo();">Get App View Info</button>
-	<br/-->
-    <button onclick="screenPop('Hello_World');">Screen Pop to Call Center Flow</button>
+	<!-- <button onclick="getAppViewInfo();">Get App View Info</button>
+	<br/>-->
+	<label for="Matricola">Numero Chiamante</label>
+    <input type="text" id="telefono_chiamante" name="telefono_chiamante">
+	<br/>
+    <button onclick="screenPop('CallCenter_Flow');">Screen Pop to Call Center Flow</button>
     <br/>
-	<!--button onclick="screenPopPage('CallCenter_Flow');">Screen Pop to Call Center VisualForce Page</button>
+	<br/>
+	<br/>
+	<!--<button onclick="screenPopPage('CallCenter_Flow');">Screen Pop to Call Center VisualForce Page</button>
     <br/>
-	<button onclick="screenPop('New_Case_Test');">Screen Pop to Test Flow</button>
+	<button onclick="screenPop('New_Case_Test');">Screen Pop to Test Flow</button>-->
     <br/>
-    <button onclick="enableClickToDial();">Enable Click To Dial</button>
+    <!--<button onclick="enableClickToDial();">Enable Click To Dial</button>
     <br/>
     <button onclick="disableClickToDial();">Disable Click To Dial</button>
     <br/>
     <button onclick="subscribeToSampleMC();">Subscribe To Channel</button>
     <br/>
-    <button onclick="publishSampleMC()" ;>Publish Message</button>
+    <button onclick="publishSampleMC()" ;>Publish Message</button>-->
     <br/>
     <label for="Matricola">Matricola</label>
     <input type="text" id="matricola" name="Matricola">
@@ -238,12 +244,17 @@
     <br/>
     <button onclick="publishClickToDial()" ;>Publish clikctoDial</button>
     <br/>
+	<br/>
+	<br/>
 	<label for="Matricola">Stato Operatore</label>
     <input type="text" id="stato_op" name="stato_op">
+	<br/>
     <button onclick="publishStatoOperatore()" ;>Publish stato operatore</button>
     <br/>
+	<br/>
+	<br/>
     <p>Received message:</p>
-    <textarea id="opencti_testMessageTextArea" class="opencti_testMessageTextArea" rows="10" style="disabled:true;resize:none;width:100%;" /-->
+    <textarea id="opencti_testMessageTextArea" class="opencti_testMessageTextArea" rows="10" style="disabled:true;resize:none;width:100%;" />
 </body>
 
 </html>
