@@ -56,6 +56,12 @@
             }
         }
 
+        function subscribeToSampleMC_IN() {
+            if (!BARRA_MC_IN) {
+                console.log('@@@@ Messaggio catturato @@@@');
+            }
+        }
+
         function onPublishMessage(message) {
             onPublishTextArea(message);
         };
@@ -212,8 +218,9 @@
 </head>
 
 <body>
-	<!-- <button onclick="getAppViewInfo();">Get App View Info</button>
-	<br/>-->
+    <!-- <button onclick="getAppViewInfo();">Get App View Info</button>
+    <br/>-->
+    Version 1.0
 	<label for="Matricola">Numero Chiamante</label>
     <input type="text" id="telefono_chiamante" name="telefono_chiamante">
 	<br/>
